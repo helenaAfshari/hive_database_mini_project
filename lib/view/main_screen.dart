@@ -14,17 +14,47 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       return SafeArea(child: Scaffold(
-        body: Column(
-           children: [
-            TextFormField(
-              decoration: InputDecoration(hintText: "@name"),
-              //controller: ,
-            ),
-            TextFormField(
-              decoration: InputDecoration(hintText: "@phone"),
-              //controller: ,
-            )
-           ],
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+             children: [
+              TextFormField(
+                decoration: InputDecoration(hintText: "@name"),
+                //controller: ,
+              ),
+              TextFormField(
+                decoration: InputDecoration(hintText: "@phone"),
+                //controller: ,
+              ),
+              SizedBox(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  itemBuilder: (context, index) => 
+                    
+                      Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text("username"),
+                              Text("phone"),
+                            ],
+                          ),
+                        ),
+                      )
+                ),
+                
+              ),
+              ElevatedButton(
+                onPressed: () {
+                
+              }, child: Text("Add to Contact"))
+             ],
+             
+             
+          ),
         ),
       ),);
   }
