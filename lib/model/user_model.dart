@@ -2,6 +2,8 @@
 
 import 'package:hive/hive.dart';
 
+//create Adapter with Build_runner
+   part 'user_model.g.dart';
 
       @HiveType(typeId: 0)
      class UserModel extends HiveObject{

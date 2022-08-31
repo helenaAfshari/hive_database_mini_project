@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:hive_database_mini_project/view/main_screen.dart';
 import 'package:hive_flutter/adapters.dart';
 
+import '../model/user_model.dart';
+
 void main() async{
 
+    //register  Adapter
+    Hive.registerAdapter(UserModelAdapter());
+    
   //must use Hive initFlutter in project
    await Hive.initFlutter();
+
+     
+
 
   runApp(const MyApp());
 }
