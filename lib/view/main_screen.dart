@@ -33,7 +33,7 @@ class MainScreen extends StatelessWidget {
                 child: Obx(
                   () =>  ListView.builder(
                     shrinkWrap: true,
-                    itemCount: 10,
+                    itemCount: userContactController.contactList.length,
                     itemBuilder: (context, index) => 
                       
                         Card(

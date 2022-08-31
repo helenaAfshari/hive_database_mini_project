@@ -15,7 +15,11 @@ class UserContactController extends GetxController{
     RxList <UserModel> contactList = RxList();
     
 
-
+           @override
+           onInit()async{
+            super.onInit();
+            await readToContact();
+           }
 
     addToContactList()async{
          
@@ -39,4 +43,15 @@ class UserContactController extends GetxController{
               print(userModel.name);
              });
     }
+
+
+readToContact()async{
+     var box = await Hive.openBox(HiveFieldConstants.userContactListBox);
+     box.values.forEach((element) {
+      UserModel userModel = element;
+          contactList.add(userModel);
+          print(userModel.name);
+     });
 }
+}
+
