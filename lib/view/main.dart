@@ -6,7 +6,7 @@ void main() async{
 
   //must use Hive initFlutter in project
    await Hive.initFlutter();
-   
+
   runApp(const MyApp());
 }
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      home:  MainScreen(),
     );
   }
 }
